@@ -1,0 +1,18 @@
+name: Deploy to production
+
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to production
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ vars.USER }}
+          host: ${{ vars.HOST }}
+          key: ${{ secrets.PRIVATE_SSH_KEY }}
+          script: "cd ${{ vars.PATH }} &&  sh deploy.sh"
