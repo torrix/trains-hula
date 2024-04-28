@@ -1,0 +1,10 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
+<datalist id="stations">
+    <?php foreach ($this->results as $code => $label) : ?>
+        <option value="<?= $code ?>"><?= $label ?></option>
+    <?php endforeach ?>
+</datalist>

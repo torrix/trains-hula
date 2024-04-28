@@ -1,0 +1,34 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
+<?= $this->doctype() ?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('Torrix Trains')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <?= $this->headLink()->prependStylesheet($this->basePath('css/app.css'))
+        ?>
+        <?= $this->headScript() ?>        
+        <script src="//unpkg.com/htmx.org@1.9.12"></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body>
+    	<main data-uk-height-viewport="expand: true" class="uk-background-secondary uk-light uk-box-shadow-medium">
+		<div class="uk-section uk-section-small">
+		    <div class="uk-container uk-container-expand">
+		        <?= $this->content ?>
+		    </div>
+		</div>
+        </main>
+        <?= $this->inlineScript()->prependFile($this->basePath('js/app.js')) ?>
+    </body>
+</html>
+
