@@ -1,4 +1,7 @@
- laminas-mvc-skeleton
+# Torrix Trains
+
+A sample HULA stack (HTMX, UIkit, Laminas, Alpine) project to display UK train departures via OpenLDBWS
+
 ## Running Unit Tests
 
 To run the supplied skeleton unit tests, you need to do one of the following:
